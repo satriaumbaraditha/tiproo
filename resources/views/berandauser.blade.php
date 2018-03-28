@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+   
+    <link rel="fluid-icon" href="{{asset('themes/img/ITPrognet.ico')}}" title="GitHub">
     <title>Lihat Gapapa</title>
-
     <!-- Bootstrap core CSS -->
     <link href="{{asset('themes/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
@@ -31,7 +31,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <img src="{{asset('themes/img/tipro.jpg')}}" height="50px"  alt="">
+        <img src="{{asset('themes/img/ITPrognet.png')}}" height="50px"  alt="">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -153,8 +153,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
+            <a class="portfolio-box" href="{{asset('themes/img/portfolio/fullsize/3.jpg')}}">
+              <img class="img-fluid" src="{{asset('themes/img/portfolio/thumbnails/3.jpg')}}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -168,8 +168,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
+            <a class="portfolio-box" href="{{asset('themes/img/portfolio/fullsize/4.jpg')}}">
+              <img class="img-fluid" src="{{asset('themes/img/portfolio/thumbnails/4.jpg')}}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -183,8 +183,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
+            <a class="portfolio-box" href="{{asset('themes/img/portfolio/fullsize/5.jpg')}}">
+              <img class="img-fluid" src="{{asset('themes/img/portfolio/thumbnails/5.jpg')}}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -198,8 +198,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
+            <a class="portfolio-box" href="{{asset('themes/img/portfolio/fullsize/6.jpg')}}">
+              <img class="img-fluid" src="{{asset('themes/img/portfolio/thumbnails/6.jpg')}}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
