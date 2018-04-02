@@ -7,6 +7,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="shortcut icon" href="{{ URL::to('/') }}/themes/img/iya.ico">
 
     <title>{{ config('app.name', 'TIPRO16') }}</title>
 
@@ -30,7 +31,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'TIPRO16') }}
+                        <img src="{{ URL::to('/') }}/themes/img/ITPrognet.png" alt="" style="height: 20px;">
                     </a>
                 </div>
 
