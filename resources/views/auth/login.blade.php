@@ -6,7 +6,7 @@
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Login</div>
       <div class="card-body">
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="{{ route('login.custom') }}">
         {{ csrf_field() }}
           <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
             <label for="exampleInputEmail1">Email address</label>
