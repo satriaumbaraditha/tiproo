@@ -123,8 +123,8 @@
       <div class="container-fluid p-0">
         <div class="row no-gutters popup-gallery">
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="{{asset('themes/img/portfolio/fullsize/1.jpg')}}">
-              <img class="img-fluid" src="{{asset('themes/img/portfolio/thumbnails/1.jpg')}}" alt="">
+            <a class="portfolio-box" href="{{asset('themes/img/portfolio/fullsize/7.jpg')}}">
+              <img class="img-fluid" src="{{asset('themes/img/portfolio/thumbnails/7.jpg')}}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -138,8 +138,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="{{asset('themes/img/portfolio/fullsize/2.jpg')}}">
-              <img class="img-fluid" src="{{asset('themes/img/portfolio/thumbnails/2.jpg')}}" alt="">
+            <a class="portfolio-box" href="{{asset('themes/img/portfolio/fullsize/14.jpg')}}">
+              <img class="img-fluid" src="{{asset('themes/img/portfolio/thumbnails/14.jpg')}}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -153,8 +153,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="{{asset('themes/img/portfolio/fullsize/3.jpg')}}">
-              <img class="img-fluid" src="{{asset('themes/img/portfolio/thumbnails/3.jpg')}}" alt="">
+            <a class="portfolio-box" href="{{asset('themes/img/portfolio/fullsize/8.jpg')}}">
+              <img class="img-fluid" src="{{asset('themes/img/portfolio/thumbnails/8.jpg')}}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -168,8 +168,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="{{asset('themes/img/portfolio/fullsize/4.jpg')}}">
-              <img class="img-fluid" src="{{asset('themes/img/portfolio/thumbnails/4.jpg')}}" alt="">
+            <a class="portfolio-box" href="{{asset('themes/img/portfolio/fullsize/10.jpg')}}">
+              <img class="img-fluid" src="{{asset('themes/img/portfolio/thumbnails/10.jpg')}}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -183,8 +183,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="{{asset('themes/img/portfolio/fullsize/5.jpg')}}">
-              <img class="img-fluid" src="{{asset('themes/img/portfolio/thumbnails/5.jpg')}}" alt="">
+            <a class="portfolio-box" href="{{asset('themes/img/portfolio/fullsize/11.jpg')}}">
+              <img class="img-fluid" src="{{asset('themes/img/portfolio/thumbnails/11.jpg')}}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
@@ -198,8 +198,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="{{asset('themes/img/portfolio/fullsize/6.jpg')}}">
-              <img class="img-fluid" src="{{asset('themes/img/portfolio/thumbnails/6.jpg')}}" alt="">
+            <a class="portfolio-box" href="{{asset('themes/img/portfolio/fullsize/12.jpg')}}">
+              <img class="img-fluid" src="{{asset('themes/img/portfolio/thumbnails/12.jpg')}}" alt="">
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
