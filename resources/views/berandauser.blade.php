@@ -128,10 +128,10 @@
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    Acer
                   </div>
                   <div class="project-name">
-                    Project Name
+                   Acer A3c21
                   </div>
                 </div>
               </div>
@@ -143,10 +143,10 @@
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    Apple
                   </div>
                   <div class="project-name">
-                    Project Name
+                    Macbook Pro Air
                   </div>
                 </div>
               </div>
@@ -158,10 +158,10 @@
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    Asus
                   </div>
                   <div class="project-name">
-                    Project Name
+                    Asus Zenbook 10
                   </div>
                 </div>
               </div>
@@ -173,10 +173,10 @@
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    Msi
                   </div>
                   <div class="project-name">
-                    Project Name
+                    Msi 820
                   </div>
                 </div>
               </div>
@@ -188,10 +188,10 @@
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    Lenovo
                   </div>
                   <div class="project-name">
-                    Project Name
+                    Lenovo L456
                   </div>
                 </div>
               </div>
@@ -203,10 +203,10 @@
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Category
+                    Samsung
                   </div>
                   <div class="project-name">
-                    Project Name
+                    Samsung S43
                   </div>
                 </div>
               </div>
