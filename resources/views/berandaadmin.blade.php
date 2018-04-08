@@ -9,19 +9,19 @@
   <meta name="author" content="">
   <title>Login Admin</title>
   <!-- Bootstrap core CSS-->
-  <link href="{{asset('themes/vendor/bootstrap/css/bootstrap.min.css')}" rel="stylesheet">
+  <link href="{{asset('themes/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
   <!-- Custom fonts for this template-->
-  <link href="{{asset('themes/vendor/font-awesome/css/font-awesome.min.css')}" rel="stylesheet" type="text/css">
+  <link href="{{asset('themes/vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
   <!-- Page level plugin CSS-->
-  <link href="{{asset('themes/vendor/datatables/dataTables.bootstrap4.css')}" rel="stylesheet">
+  <link href="{{asset('themes/vendor/datatables/dataTables.bootstrap4.css')}}" rel="stylesheet">
   <!-- Custom styles for this template-->
-  <link href="{{asset('themes/css/sb-admin.css')}" rel="stylesheet">
+  <link href="{{asset('themes/css/sb-admin.css')}}" rel="stylesheet">
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <img src="{{asset('themes/img/ITPrognet.png')}" style="width: 10%;">
+    <img src="{{asset('themes/img/ITPrognet.png')}}" style="width: 10%;">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -302,19 +302,19 @@
       </div>
     </div>
     <!-- Bootstrap core JavaScript-->
-    <script src="{{asset('themes/vendor/jquery/jquery.min.js')}"></script>
-    <script src="{{asset('themes/vendor/bootstrap/js/bootstrap.bundle.min.js')}"></script>
+    <script src="{{asset('themes/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('themes/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- Core plugin JavaScript-->
-    <script src="{{asset('themes/vendor/jquery-easing/jquery.easing.min.js')}"></script>
+    <script src="{{asset('themes/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
     <!-- Page level plugin JavaScript-->
-    <script src="{{asset('themes/vendor/chart.js/Chart.min.js')}"></script>
-    <script src="{{asset('themes/vendor/datatables/jquery.dataTables.js')}"></script>
-    <script src="{{asset('themes/vendor/datatables/dataTables.bootstrap4.js')}"></script>
+    <script src="{{asset('themes/vendor/chart.js/Chart.min.js')}}"></script>
+    <script src="{{asset('themes/vendor/datatables/jquery.dataTables.js')}}"></script>
+    <script src="{{asset('themes/vendor/datatables/dataTables.bootstrap4.js')}}"></script>
     <!-- Custom scripts for all pages-->
-    <script src="{{asset('themes/js/sb-admin.min.js')}"></script>
+    <script src="{{asset('themes/js/sb-admin.min.js')}}"></script>
     <!-- Custom scripts for this page-->
-    <script src="{{asset('themes/js/sb-admin-datatables.min.js')}"></script>
-    <script src="{{asset('themes/js/sb-admin-charts.min.js')}"></script>
+    <script src="{{asset('themes/js/sb-admin-datatables.min.js')}}"></script>
+    <script src="{{asset('themes/js/sb-admin-charts.min.js')}}"></script>
   </div>
 </body>
 
