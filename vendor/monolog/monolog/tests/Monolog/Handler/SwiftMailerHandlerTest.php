@@ -72,33 +72,9 @@ class SwiftMailerHandlerTest extends TestCase
         $handler->handleBatch($records);
     }
 
-    public function testMessageSubjectFormatting()
-    {
-        // Wire Mailer to expect a specific Swift_Message with a customized Subject
-        $messageTemplate = new \Swift_Message();
-        $messageTemplate->setSubject('Alert: %level_name% %message%');
-        $receivedMessage = null;
-
-        $this->mailer->expects($this->once())
-            ->method('send')
-            ->with($this->callback(function ($value) use (&$receivedMessage) {
-                $receivedMessage = $value;
-                return true;
-            }));
-
-        $handler = new SwiftMailerHandler($this->mailer, $messageTemplate);
-
-        $records = array(
-            $this->getRecord(Logger::EMERGENCY),
-        );
-        $handler->handleBatch($records);
-
-        $this->assertEquals('Alert: EMERGENCY test', $receivedMessage->getSubject());
-    }
-
     public function testMessageHaveUniqueId()
     {
-        $messageTemplate = new \Swift_Message();
+        $messageTemplate = \Swift_Message::newInstance();
         $handler = new SwiftMailerHandler($this->mailer, $messageTemplate);
 
         $method = new \ReflectionMethod('Monolog\Handler\SwiftMailerHandler', 'buildMessage');

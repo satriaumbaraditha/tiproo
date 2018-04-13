@@ -8,8 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="shortcut icon" href="{{ URL::to('/') }}/themes/img/iya.ico">
-    <title>Lihat Gapapa</title>
+    <link rel="shortcut icon" href="{{ URL::to('/') }}/img/iya.ico">
+    <title>TIPRO16</title>
     <!-- Bootstrap core CSS -->
     <link href="{{asset('themes/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
@@ -38,10 +38,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="{{ route('login') }}">Login/Register</a>
+                  <a class="nav-link js-scroll-trigger" href="{{ url('/login') }}">Login/Register</a>
                 </li>
             <li class="nav-item active">
-              <a class="nav-link js-scroll-trigger" href="#portofolio">Home</a>
+              <a class="nav-link js-scroll-trigger" href="{{ url('/home') }}">Home</a>
               <span class="sr-only">(current)</span>
             </li>
             <li class="nav-item">
@@ -128,10 +128,10 @@
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Acer
+                    Category
                   </div>
                   <div class="project-name">
-                   Acer A3c21
+                    Project Name
                   </div>
                 </div>
               </div>
@@ -143,10 +143,10 @@
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Apple
+                    Category
                   </div>
                   <div class="project-name">
-                    Macbook Pro Air
+                    Project Name
                   </div>
                 </div>
               </div>
@@ -158,10 +158,10 @@
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Asus
+                    Category
                   </div>
                   <div class="project-name">
-                    Asus Zenbook 10
+                    Project Name
                   </div>
                 </div>
               </div>
@@ -173,10 +173,10 @@
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Msi
+                    Category
                   </div>
                   <div class="project-name">
-                    Msi 820
+                    Project Name
                   </div>
                 </div>
               </div>
@@ -188,10 +188,10 @@
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Lenovo
+                    Category
                   </div>
                   <div class="project-name">
-                    Lenovo L456
+                    Project Name
                   </div>
                 </div>
               </div>
@@ -203,10 +203,10 @@
               <div class="portfolio-box-caption">
                 <div class="portfolio-box-caption-content">
                   <div class="project-category text-faded">
-                    Samsung
+                    Category
                   </div>
                   <div class="project-name">
-                    Samsung S43
+                    Project Name
                   </div>
                 </div>
               </div>

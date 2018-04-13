@@ -27,7 +27,7 @@ interface KernelInterface extends HttpKernelInterface, \Serializable
     /**
      * Returns an array of bundles to register.
      *
-     * @return BundleInterface[] An array of bundle instances
+     * @return BundleInterface[] An array of bundle instances.
      */
     public function registerBundles();
 
@@ -121,9 +121,9 @@ interface KernelInterface extends HttpKernelInterface, \Serializable
     public function isDebug();
 
     /**
-     * Gets the application root dir (path of the project's Kernel class).
+     * Gets the application root dir.
      *
-     * @return string The Kernel root dir
+     * @return string The application root dir
      */
     public function getRootDir();
 

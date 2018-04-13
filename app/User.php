@@ -2,13 +2,10 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -19,7 +16,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be hidden for arrays.
+     * The attributes excluded from the model's JSON form.
      *
      * @var array
      */
@@ -27,14 +24,18 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-
-    public function is_admin(){
-        if($this->admin){
-        return true;
-        }
-        return false;
-    
+    public function hasPassword()
+    {
+        return $this->password !=='';
     }
 
+    public function addresses()
+    {
+        return $this->hasMany('App\Address');
+    }
 
+    public function orders()
+    {
+        return $this->hasMany('App\Order');
+    }
 }

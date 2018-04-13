@@ -3,15 +3,13 @@
 namespace Illuminate\Foundation\Testing;
 
 use Mockery;
-use Illuminate\Support\Facades\Facade;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Console\Application as Artisan;
-use PHPUnit\Framework\TestCase as BaseTestCase;
+use PHPUnit_Framework_TestCase;
 
-abstract class TestCase extends BaseTestCase
+abstract class TestCase extends PHPUnit_Framework_TestCase
 {
     use Concerns\InteractsWithContainer,
         Concerns\MakesHttpRequests,
+        Concerns\ImpersonatesUsers,
         Concerns\InteractsWithAuthentication,
         Concerns\InteractsWithConsole,
         Concerns\InteractsWithDatabase,
@@ -72,10 +70,6 @@ abstract class TestCase extends BaseTestCase
             call_user_func($callback);
         }
 
-        Facade::clearResolvedInstances();
-
-        Model::setEventDispatcher($this->app['events']);
-
         $this->setUpHasRun = true;
     }
 
@@ -86,24 +80,26 @@ abstract class TestCase extends BaseTestCase
      */
     protected function refreshApplication()
     {
+        putenv('APP_ENV=testing');
+
         $this->app = $this->createApplication();
     }
 
     /**
      * Boot the testing helper traits.
      *
-     * @return array
+     * @return void
      */
     protected function setUpTraits()
     {
         $uses = array_flip(class_uses_recursive(static::class));
 
-        if (isset($uses[DatabaseMigrations::class])) {
-            $this->runDatabaseMigrations();
-        }
-
         if (isset($uses[DatabaseTransactions::class])) {
             $this->beginDatabaseTransaction();
+        }
+
+        if (isset($uses[DatabaseMigrations::class])) {
+            $this->runDatabaseMigrations();
         }
 
         if (isset($uses[WithoutMiddleware::class])) {
@@ -113,8 +109,6 @@ abstract class TestCase extends BaseTestCase
         if (isset($uses[WithoutEvents::class])) {
             $this->disableEventsForAllTests();
         }
-
-        return $uses;
     }
 
     /**
@@ -124,6 +118,10 @@ abstract class TestCase extends BaseTestCase
      */
     protected function tearDown()
     {
+        if (class_exists('Mockery')) {
+            Mockery::close();
+        }
+
         if ($this->app) {
             foreach ($this->beforeApplicationDestroyedCallbacks as $callback) {
                 call_user_func($callback);
@@ -140,14 +138,8 @@ abstract class TestCase extends BaseTestCase
             $this->serverVariables = [];
         }
 
-        if (class_exists('Mockery')) {
-            Mockery::close();
-        }
-
         $this->afterApplicationCreatedCallbacks = [];
         $this->beforeApplicationDestroyedCallbacks = [];
-
-        Artisan::forgetBootstrappers();
     }
 
     /**
@@ -156,7 +148,7 @@ abstract class TestCase extends BaseTestCase
      * @param  callable  $callback
      * @return void
      */
-    public function afterApplicationCreated(callable $callback)
+    protected function afterApplicationCreated(callable $callback)
     {
         $this->afterApplicationCreatedCallbacks[] = $callback;
 
