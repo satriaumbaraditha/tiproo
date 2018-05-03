@@ -10,7 +10,7 @@ class Product extends Model
 {
     protected $appends = ['photo_path'];
 
-    protected $fillable = ['name', 'photo', 'model', 'prince', 'weight'];
+    protected $fillable = ['name', 'photo', 'model', 'price', 'description', 'weight'];
 
     public function categories()
     {

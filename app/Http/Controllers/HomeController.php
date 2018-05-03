@@ -40,4 +40,7 @@ class HomeController extends Controller
 
         return view('customer.view-orders')->with(compact('orders', 'q', 'status'));
     }
+    public function index1(){
+      return view('dashboard');
+    }
 }

@@ -16,12 +16,13 @@
 
     <table class="table table-hover">
         <thead>
-        <input type="checkbox" id="checkAll"/> Check all</label> and <a href="">Delete all checked</a>
+        <!-- <input type="checkbox" id="checkAll"/> Check all</label> and <a href="">Delete all checked</a> -->
             <tr>
                 <td>Mark</td>
                 <td>Name</td>
                 <td>Model</td>
                 <td>Category</td>
+                <td>Description</td>
                 <td></td>
             </tr>
         </thead>
@@ -38,6 +39,7 @@
                     {{$category->title}}</span>
                     @endforeach
                 </td>
+                <td>{{ $product->description}}</td>
                 <td>
                     {!! Form::model($product,['route'=>['products.destroy', $product], 'method'=>'delete', 'class'=>'form-inline']) !!}
                     <a href="{{route('products.edit', $product->id)}}">Edit</a> |

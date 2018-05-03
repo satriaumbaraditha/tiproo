@@ -37,20 +37,21 @@
 
                 @forelse($products as $product)
                     <div class="col-md-6">
+                      <!-- <a href="{{ url('/produk') }}">@include('catalogs._product-thumbnail', ['product'=> $product])  </a> -->
                         @include('catalogs._product-thumbnail', ['product'=> $product])
                     </div>
                     @empty
                     <div class="col-md-12 text-center">
                         @if(isset($q))
                         <h1>:(</h1>
-                        <p>Produk yang aanda cari tidak ditemukan.</p>
+                        <p>Produk Yang Anda Cari Tidak Ditemukan.</p>
                         @if(isset($category))
                             <p><a href="{{url('/catalogs?q='.$q)}}">Cari Disemua Kategori<i class="fa fa-arrow-right"></i></a></p>
                         @endif
 
                     @else
                         <h1>:|</h1>
-                        <p>Belum ada produk untuk kategori ini.</p>
+                        <p>Belum Ada Produk Untuk Kategori Ini.</p>
                         @endif
 
                         <p><a href="{{url('/catalogs')}}">Lihat Semua Produk <i class="fa fa-arrow-right"></i></p>

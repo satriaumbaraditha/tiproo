@@ -10,41 +10,52 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'CatalogsController@index');
+Route::get('/catalogs', 'CatalogsController@index');
 
-Route::get('/', function () {
-    return view('berandauser');
+Route::post('cart', 'CartController@addProduct');
+
+Route::get('cart', "CartController@show");
+
+Route::delete('cart/{product_id}', 'CartController@removeProduct');
+
+Route::put('cart/{product_id}','CartController@changeQuantity');
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
+
+Route::resource('categories', 'CategoriesController');
+
+Route::resource('products','ProductsController');
+
+Route::get('checkout/login','CheckoutController@login');
+
+Route::post('checkout/login','CheckoutController@postlogin');
+
+Route::get('checkout/address', 'CheckoutController@address');
+Route::post('checkout/address', 'CheckoutController@postAddress');
+Route::get('address/regencies', 'AddressController@regencies');
+Route::get('checkout/payment', 'CheckoutController@payment');
+Route::post('checkout/payment', 'CheckoutController@postPayment');
+
+Route::get('checkout/success', 'CheckoutController@success');
+
+Route::resource('orders','OrdersController', ['only'=>[
+    'index', 'edit', 'update'
+]]);
+
+Route::get('/home/orders', 'HomeController@viewOrders');
+
+// Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
+// Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
+Route::get('/profile', 'UsersController@index');
+
+Route::group(['middleware'=>'auth'], function(){
+    Route::get('/profile/edit', ['as' => 'profile.edit','uses' => 'UsersController@edit']);
+    Route::post('/profile/edit', ['as' => 'profile.edit', 'uses' => 'UsersController@update']);
 });
 
-// Route::resource('/User', 'UserController');
-
-Route::get ('login', function(){
-
-	return view('Login');
-});
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::Resource('/Barang','BarangController');
-
-Route::Resource('/Merk','MerkController');
-
-
-Route::post('/login/custom', ['as' => 'login', 'uses'=>'LoginController@login', 
-    'as' => 'login.custom'
-]); 
-
-Route::group(['middleware' => 'auth'], function(){
-    Route::get('/home', function(){
-        return view('home' );
-    })->name('home');
-    Route::get('/berandaadmin', function(){
-        return view('berandaadmin');
-    })->name('berandaadmin');
+Route::group(['middleware'=>'api'], function() {
+Route::get('address/regencies', 'AddressController@regencies');
 });

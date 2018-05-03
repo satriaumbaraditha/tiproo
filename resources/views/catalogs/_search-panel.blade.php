@@ -6,7 +6,7 @@
     <div class="panel-body">
         {!! Form::open(['url'=> 'catalogs', 'method'=>'get']) !!}
             <div class="form-group {!! $errors->has('q') ? 'has-error' : '' !!}">
-                {!! Form::label('q', 'Apa yang kamu cari ?') !!}
+                {!! Form::label('q', 'Apa Yang Kamu Cari ?') !!}
                 {!! Form::text('q', $q, ['class'=>'form-control']) !!}
                 {!! $errors->first('q', '<p class="help-block">:message</p>') !!}
             </div>

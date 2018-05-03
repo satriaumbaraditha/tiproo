@@ -1,6 +1,6 @@
 <h3>{{$product->name}}</h3>
 <div class="thumbnail">
-    <img src="{{$product->photo_path}}" class="img-rounded">
+  <a href="{{ url('/produk') }}/{{$product->id }}"> <img src="{{$product->photo_path}}" class="img-rounded"></a>
     <p>Model : {{$product->model}}</p>
     <p>Harga :<strong>Rp{{number_format($product->price, 2)}}</strong></p>
     <p>Category:

@@ -20,9 +20,7 @@
 */
 
 Route::group(['middleware' => 'web'], function () {
-  Route::get('/', function () {
-      return view('berandauser');
-  });
+  Route::get('/', 'CatalogsController@index');
 
     Route::get('/catalogs', 'CatalogsController@index');
 
@@ -38,6 +36,8 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/home', 'HomeController@index');
 
+    Route::get('/dashboard', 'HomeController@index1');
+    Route::get('produk/{id}', 'ProductsController@produk');
     Route::resource('categories', 'CategoriesController');
 
     Route::resource('products','ProductsController');
