@@ -36,7 +36,7 @@ class ProductsSeeder extends Seeder
             'name'=> 'Laptop Pro',
             'model'=> 'Laptop Dinamic',
             'weight'=>rand(1,3) *1000,
-            'photo'=>'sepatu.jpeg',
+            'photo'=>'laptop1.jpeg',
             'price'=> 340000]);
 
 
@@ -44,14 +44,14 @@ class ProductsSeeder extends Seeder
             'name'=> 'Laptop Max',
             'model'=> 'Laptop Static',
             'weight'=>rand(1,3) *1000,
-            'photo'=>'sepatu2.jpg',
+            'photo'=>'laptop2.jpg',
             'price'=> 310000]);
 
         $laptop3 = Product::create([
             'name'=> 'Laptop Zoom',
             'model'=> 'Laptop Protic',
             'weight'=>rand(1,3) *1000,
-            'photo'=>'sepatu3.png',
+            'photo'=>'laptop3.png',
             'price'=> 300000]);
 
         $gaming->products()->saveMany([$laptop1, $laptop2, $laptop3]);
