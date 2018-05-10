@@ -33,7 +33,7 @@ class Product extends Model
             //removing relations to category
             $model->categories()->detach();
             // removing relations to cart
-            $model->cart()->detach();
+            // $model->cart()->detach();
         });
     }
 

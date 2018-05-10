@@ -41,16 +41,16 @@ class Fee extends Model
 
     public function populateCost()
     {
-        $params = $this->toArray();
-        $costs = RajaOngkir::Cost($params)->get();
+      $params = $this->toArray();
+      $cost = RajaOngkir::Cost($params)->get();
 
-        $cost = 0;
-        foreach ($costs[0]['costs'] as $result) {
-            if ($result['service'] == $this->service) {
-                $cost = $result['cost'][0]['value'];
-                break;
-            }
-        }
+      $cost = 0;
+      foreach ($cost as $result) {
+          if ($result['service'] == $this->service) {
+              $cost = $result['cost'][0]['value'];
+              break;
+          }
+      }
 
         $cost = $cost > 0 ? $cost : config('rajaongkir.fallback_fee');
         //update cost & force update  'update_at' field

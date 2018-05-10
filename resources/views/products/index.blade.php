@@ -43,7 +43,7 @@
                 <td>
                     {!! Form::model($product,['route'=>['products.destroy', $product], 'method'=>'delete', 'class'=>'form-inline']) !!}
                     <a href="{{route('products.edit', $product->id)}}">Edit</a> |
-                    {!! Form::submit('delete', ['class'=>'btn btn-xs btn-danger js-submit-confirm']) !!}
+                    {!! Form::submit('Delete', ['class'=>'btn btn-xs btn-danger js-submit-confirm']) !!}
                     {!! Form::close() !!}
                 </td>
             </tr>
