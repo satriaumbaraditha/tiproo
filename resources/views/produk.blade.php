@@ -10,7 +10,7 @@
         <h1>Description : {{$product->description}}</h1>
       </div>
   @endforeach
-  <p>
+  <!-- <p>
       {!! Form::open(['url'=>'cart', 'method'=>'post', 'class'=>'form-inline']) !!}
           {!! Form::hidden('product_id', $product->id) !!}
 
@@ -20,7 +20,7 @@
           {!! Form::submit('Tambah Ke Cart', ['class'=>'btn btn-primary']) !!}
       {!! Form::close() !!}
 
-  </p>
+  </p> -->
 </div>
 
 @endsection
