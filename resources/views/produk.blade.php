@@ -3,14 +3,19 @@
 @section('content')
 <div class="container">
   @foreach($products as $product)
-      <div class="col-md-6">
-        <h1>Name : {{$product->name}}</h1>
-        <h1>Model : {{$product->model}}</h1>
-        <h1>Price : {{$product->price}}</h1>
-        <h1>Description : {{$product->description}}</h1>
-      </div>
+  <div class="col-md-9">
+    <img src="{{$product->photo_path}}">
+  </div>
+  <div class="col-md-6">
+    <h1>Name : {{$product->name}}</h1>
+    <h1>Model : {{$product->model}}</h1>
+    <h1>Price : {{$product->price}}</h1>
+    <h1>Description : {{$product->description}}</h1>
+  </div>
+
+
   @endforeach
-  <!-- <p>
+  <p>
       {!! Form::open(['url'=>'cart', 'method'=>'post', 'class'=>'form-inline']) !!}
           {!! Form::hidden('product_id', $product->id) !!}
 
@@ -20,7 +25,7 @@
           {!! Form::submit('Tambah Ke Cart', ['class'=>'btn btn-primary']) !!}
       {!! Form::close() !!}
 
-  </p> -->
+  </p>
 </div>
 
 @endsection

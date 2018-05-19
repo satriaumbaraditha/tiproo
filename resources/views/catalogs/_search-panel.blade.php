@@ -1,5 +1,5 @@
-<div class="panel panel-default">
-    <div class="panel-heading">
+<div class="panel panel-default" style="background-color:powderblue;">
+    <div class="panel-heading"style="background-color:powderblue;">
         <h3 class="panel-title">Cari Poduk</h3>
     </div>
 

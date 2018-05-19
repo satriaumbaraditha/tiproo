@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
-
+use DB;
 class HomeController extends Controller
 {
     /**
@@ -40,7 +40,15 @@ class HomeController extends Controller
 
         return view('customer.view-orders')->with(compact('orders', 'q', 'status'));
     }
+
     public function index1(){
-      return view('dashboard');
+      // dd('s');
+      $order_details = DB::select('SELECT * FROM order_details ORDER BY quantity DESC LIMIT 5');
+      // dd($order_details);
+      return view('dashboard',
+          ['title' => 'Anychart PHP template',
+          'chartTitle' => 'Top 5 Order',
+          'chartData' => json_encode($order_details),]);
+        }
+      // return view('dashboard');
     }
-}

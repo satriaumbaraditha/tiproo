@@ -5,7 +5,7 @@
         @include('checkout._step')
         <div class="row">
             <div class="col-xs-8">
-                <div class="panel panel-default">
+                <div class="panel panel-default" style="background-color:powderblue; border-radius: 20px;">
                     <div class="panel-heading">
                         Alamat Pengirim
                     </div>

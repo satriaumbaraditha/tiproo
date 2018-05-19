@@ -36,7 +36,7 @@
                 </div>
 
                 @forelse($products as $product)
-                    <div class="col-md-6">
+                    <div class="col-md-6" style="background-color:powderblue; border-radius: 20px;">
                       <!-- <a href="{{ url('/produk') }}">@include('catalogs._product-thumbnail', ['product'=> $product])  </a> -->
                         @include('catalogs._product-thumbnail', ['product'=> $product])
                     </div>

@@ -1,6 +1,6 @@
 <div class="panel panel-default">
     <div class="panel-heading">Cart</div>
-    <div class="panel-body">
+    <div class="panel-body"style="background-color:powderblue; border-radius: 4px;">
         <table class="table table-condensed">
             <thead>
                 <tr>

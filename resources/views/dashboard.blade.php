@@ -23,12 +23,18 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{ asset('bower_components/AdminLTE/dist/css/skins/_all-skins.min.css') }}">
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-vml.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" />
+  <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.2.1/css/anychart-ui.min.css"/>
+  <link rel="stylesheet" href="{{ asset('/css/style.css') }}" />
 </head>
 <!-- BAR CHART -->
 <div class="box box-success">
   <div class="box-header with-border">
     <a href="{{ url('/catalogs') }}"><h3 class="box-title">Bar Chart</h3></a>
-    <div class="box-tools pull-right">
+    <!-- <div class="box-tools pull-right">
       <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
       </button>
       <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -38,7 +44,7 @@
     <div class="chart">
       <canvas id="barChart" style="height:230px"></canvas>
     </div>
-  </div>
+  </div> -->
   <!-- /.box-body -->
 </div>
 
@@ -55,7 +61,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('bower_components/AdminLTE/dist/js/demo.js') }}"></script>
 
-<script>
+<!-- <script>
   $(function () {
     var areaChartData = {
       labels: ["January", "February", "March", "April", "May", "June", "July"],
@@ -120,6 +126,25 @@
     barChartOptions.datasetFill = false;
     barChart.Bar(barChartData, barChartOptions);
   });
+</script> -->
+
+<div id="container"></div>
+<script>
+    anychart.onDocumentReady(function() {
+        var chart = anychart.pie(
+          <?php
+          echo '[';
+          for ($i=0; $i < count(json_decode($chartData)); $i++) {
+            $data = json_decode($chartData)[$i];
+            echo "{ x: ". $data->id. ", value:".$data->quantity."},";
+          }
+          echo ']';
+          ?>
+        );
+        chart.title("<?= $chartTitle?>");
+        chart.container("container");
+        chart.draw();
+    });
 </script>
 </body>
 </html>

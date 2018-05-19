@@ -9,7 +9,7 @@
                 <div class="panel-heading">
                     Pembayaran
                 </div>
-                <div class="panel-body">
+                <div class="panel-body"style="background-color:powderblue; border-radius: 4px;">
                     @include('checkout._payment-form')
                 </div>
             </div>

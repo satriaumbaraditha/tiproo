@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="background-color:powderblue; border-radius: 20px;">
     <div class="row">
         <div class="col-md-12">
         <h3>Category <small ><a href="{{route('categories.create')}}" class="btn btn-warning btn-sm">New Category</a></small></h3>

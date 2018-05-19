@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="background-color:powderblue; border-radius: 20px;">
         <div class="row">
+          <br></br>
             <div class="col-md-12">
             {!! Form::open(['url'=>'orders', 'method'=>'get', 'class'=>'form-inline']) !!}
             <div class="form-group {{ $errors->has('q') ? 'has-errot' : '' }}">
@@ -15,6 +16,7 @@
             </div>
             {!! Form::submit('Cari', ['class'=>'btn btn-primary']) !!}
             {!! Form::close() !!}
+            <br></br>
                 <table class="table table-hover">
                     <thead>
                         <tr>

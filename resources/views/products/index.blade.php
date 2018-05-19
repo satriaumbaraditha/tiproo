@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="background-color:powderblue; border-radius: 10px;">
     <div class="row">
         <div class="col-md-12">
             <h3>Product <small><a href="{{route('products.create') }}" class="btn btn-warning btn-sm">New Product</a></small></h3>
@@ -18,18 +18,18 @@
         <thead>
         <!-- <input type="checkbox" id="checkAll"/> Check all</label> and <a href="">Delete all checked</a> -->
             <tr>
-                <td>Mark</td>
+                <!-- <td>Mark</td> -->
                 <td>Name</td>
                 <td>Model</td>
                 <td>Category</td>
                 <td>Description</td>
-                <td></td>
+                <td>Action</td>
             </tr>
         </thead>
         <tbody>
         @foreach($products as $product)
             <tr>
-             <td><input type="checkbox" name="checkbox[]" data-id="checkbox"class="cb" value="{{$product->id}}" /></td>
+             <!-- <td><input type="checkbox" name="checkbox[]" data-id="checkbox"class="cb" value="{{$product->id}}" /></td> -->
                 <td>{{ $product->name}}</td>
                 <td>{{ $product->model}}</td>
                 <td>

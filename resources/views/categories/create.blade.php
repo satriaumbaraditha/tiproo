@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="background-color:powderblue; border-radius: 20px;">
         <div class="row">
             <div class="col-md-12">
             <h3>New Category</h3>
@@ -10,5 +10,6 @@
             {!! Form::close() !!}
             </div>
         </div>
+        <br></br>
     </div>
 @endsection

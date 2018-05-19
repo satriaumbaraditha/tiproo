@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="background-color:powderblue; border-radius: 20px;">
         @if($cart->isEmpty())
             <div class="text-center">
                 <h1> : | </h1>
