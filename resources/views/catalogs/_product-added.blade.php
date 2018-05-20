@@ -2,7 +2,7 @@
     $(document).ready(function(){
         swal({
             title: "Suksess",
-            text :"Berhasil menambahkan <strong>{{ $product->name}}</strong> ke cart",
+            text :"Berhasil menambahkan <strong>{{ Session::get('flash_product_name') }}</strong> ke cart",
             type: "success",
             showCancelButton:true,
             confirmButtonColor:"#63BC81",
