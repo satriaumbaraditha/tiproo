@@ -13,7 +13,7 @@ class ProductsController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('role:admin');
+        // $this->middleware('role:admin');
     }
 
     public function deletePhoto($filename)
@@ -64,11 +64,10 @@ class ProductsController extends Controller
             'model'=>'required',
             'photo'=>'mimes:jpeg,png,jpg|max:10240',
             'price'=>'required|numeric|min:1000',
-            'description'=>'required',
             'weight'=>'required|numeric|min:1'
         ]);
 
-        $data = $request->only('name', 'model', 'price', 'description','weight');
+        $data = $request->only('name', 'model', 'price', 'weight');
 
         if ($request->hasFile('photo'))
         {
@@ -120,11 +119,10 @@ class ProductsController extends Controller
             'model'=>'required',
             'photo'=>'mimes:jpeg,jpg,png|max:10240',
             'price'=>'required|numeric|min:1000',
-            'description'=>'required',
             'weight'=>'required|numeric|min:1'
         ]);
 
-        $data = $request->only('name', 'model', 'price', 'description','weight');
+        $data = $request->only('name', 'model', 'price', 'weight');
 
         if ($request->hasFile('photo')) {
             $data['photo'] = $this->savePhoto($request->file('photo'));
@@ -158,11 +156,10 @@ class ProductsController extends Controller
         \Flash::success('Product Deleted.');
         return redirect()->route('products.index');
     }
-
     public function produk($id){
-          $products =product::where('id', $id)->get();
-          // $products = product::all();
-          return view('produk', compact('products'));
-          // return view('produk');
-        }
+      $products =product::where('id', $id)->get();
+      // $products = product::all();
+      return view('produk', compact('products'));
+      // return view('produk');
+    }
 }

@@ -29,7 +29,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/catalogs';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new authentication controller instance.
@@ -48,38 +48,38 @@ class AuthController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
 
-    // public function redirectToProvider()
-    // {
-    //     return Socialite::driver('facebook')->redirect();
-    // }
-    //
-    // public function handleProviderCallback()
-    // {
-    //     try{
-    //         $user = Socialite::driver('facebook')->user();
-    //     }catch (Exception $e){
-    //         return redirect('auth/facebook');
-    //     }
-    //
-    //     $authUser = $this->findOrCreateUser($user);
-    //     Auth::login($authUser, true);
-    //     return redirect()->route('home');
-    // }
-    //
-    // public function findOrCreateUser($facebookUser)
-    // {
-    //     $authUser = User::where('facebook_id', $facebookUser_id)->first();
-    //     if ($authUser) {
-    //         return $authUser;
-    //     }
-    //
-    //     return User::create([
-    //         'name'=>$facebookUser->name,
-    //         'email'=>$facebookUser->email,
-    //         'facebook_id'=>$facebookUser->id,
-    //         'avatar'=>$facebookUser->avatar
-    //     ]);
-    // }
+    public function redirectToProvider()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    public function handleProviderCallback()
+    {
+        try{
+            $user = Socialite::driver('facebook')->user();
+        }catch (Exception $e){
+            return redirect('auth/facebook');
+        }
+
+        $authUser = $this->findOrCreateUser($user);
+        Auth::login($authUser, true);
+        return redirect()->route('home');
+    }
+
+    public function findOrCreateUser($facebookUser)
+    {
+        $authUser = User::where('facebook_id', $facebookUser_id)->first();
+        if ($authUser) {
+            return $authUser;
+        }
+
+        return User::create([
+            'name'=>$facebookUser->name,
+            'email'=>$facebookUser->email,
+            'facebook_id'=>$facebookUser->id,
+            'avatar'=>$facebookUser->avatar
+        ]);
+    }
 
     protected function validator(array $data)
     {

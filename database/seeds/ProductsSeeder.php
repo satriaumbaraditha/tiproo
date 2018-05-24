@@ -14,80 +14,80 @@ class ProductsSeeder extends Seeder
     public function run()
     {
 
-        $laptop = Category::create(['title'=>'Laptop']);
-        $laptop->childs()->saveMany([
+        $sepatu = Category::create(['title'=>'Sepatu']);
+        $sepatu->childs()->saveMany([
             new Category(['title'=>'Lifestyle']),
-            new Category(['title'=>'Gaming']),
-            new Category(['title'=>'Presention']),
-            new Category(['title'=>'Mini Notebook']),
+            new Category(['title'=>'Berlari']),
+            new Category(['title'=>'Basket']),
+            new Category(['title'=>'Sepakbola']),
         ]);
 
-        $notebook = Category::create(['title'=>'Notebook']);
-        $notebook->childs()->saveMany([
-            new Category(['title'=>'ScreenTouch']),
-            new Category(['title'=>'Gaming']),
-            new Category(['title'=>'Mini Notebook'])
+        $pakaian = Category::create(['title'=>'Pakaian']);
+        $pakaian->childs()->saveMany([
+            new Category(['title'=>'Jaket']),
+            new Category(['title'=>'Hoodie']),
+            new Category(['title'=>'Rompi'])
         ]);
 
         //simple product
-        $gaming = Category::where('title', 'Gaming')->first();
+        $running = Category::where('title', 'Berlari')->first();
         $lifestyle = Category::where('title', 'Lifestyle')->first();
-        $laptop1 = Product::create([
-            'name'=> 'Laptop Pro',
-            'model'=> 'Laptop Dinamic',
+        $sepatu1 = Product::create([
+            'name'=> 'Nike Air Force',
+            'model'=> 'Sepatu Pria',
             'weight'=>rand(1,3) *1000,
-            'photo'=>'laptop1.jpeg',
+            'photo'=>'sepatu.jpeg',
             'price'=> 340000]);
 
 
-        $laptop2 = Product::create([
-            'name'=> 'Laptop Max',
-            'model'=> 'Laptop Static',
+        $sepatu2 = Product::create([
+            'name'=> 'Nike Air Max',
+            'model'=> 'Sepatu Wanita',
             'weight'=>rand(1,3) *1000,
-            'photo'=>'laptop2.jpg',
+            'photo'=>'sepatu2.jpg',
             'price'=> 310000]);
 
-        $laptop3 = Product::create([
-            'name'=> 'Laptop Zoom',
-            'model'=> 'Laptop Protic',
+        $sepatu3 = Product::create([
+            'name'=> 'Nike Air Zoom',
+            'model'=> 'Sepatu Wanita',
             'weight'=>rand(1,3) *1000,
-            'photo'=>'laptop3.png',
+            'photo'=>'sepatu3.png',
             'price'=> 300000]);
 
-        $gaming->products()->saveMany([$laptop1, $laptop2, $laptop3]);
-        $lifestyle->products()->saveMany([$laptop1, $laptop2]);
+        $running->products()->saveMany([$sepatu1, $sepatu2, $sepatu3]);
+        $lifestyle->products()->saveMany([$sepatu1, $sepatu2]);
 
-        $jaket = Category::where('title', 'notebook')->first();
-        $vest = Category::where('title', 'pc')->first();
+        $jaket = Category::where('title', 'jaket')->first();
+        $vest = Category::where('title', 'rompi')->first();
 
-        $notebook1 = Product::create([
-            'name'=>'Notebook Mini',
-            'model'=>'ScreenTouch Mini',
-            'photo'=>'notebook1.jpg',
+        $jaket1 = Product::create([
+            'name'=>'Nike Aerolf Boomber',
+            'model'=>'Jaket Wanita',
+            'photo'=>'jaket1.jpg',
             'weight'=>rand(1,3) *1000,
             'price'=>890000]);
 
-        $notebook2 = Product::create([
-            'name'=>'Notebook Pro',
-            'model'=>'ScreenTouch Pro',
-            'photo'=>'notebook2.jpeg',
+        $jaket2 = Product::create([
+            'name'=>'Nike Gulp Boomber',
+            'model'=>'Jaket Pria',
+            'photo'=>'jaket2.jpeg',
             'weight'=>rand(1,3) *1000,
             'price'=>89000]);
 
-        $notebook3 = Product::create([
-            'name'=>'Notebook Max',
-            'model'=>'ScreenTouch Max',
-            'photo'=>'notebook3.jpg',
+        $jaket3 = Product::create([
+            'name'=>'Nike SB',
+            'model'=>'Jaket Pria',
+            'photo'=>'jaket3.jpg',
             'weight'=>rand(1,3) *1000,
             'price'=>890000]);
 
-        $notebook->products()->saveMany([$notebook1, $notebook2]);
-        $vest->products()->saveMany([$notebook2, $notebook3]);
+        $jaket->products()->saveMany([$jaket1, $jaket2]);
+        $vest->products()->saveMany([$jaket2, $jaket3]);
 
         //copy image simple to public folder
         $from =  database_path(). DIRECTORY_SEPARATOR. 'seeds'. DIRECTORY_SEPARATOR. 'img' .DIRECTORY_SEPARATOR;
         $to = public_path() .DIRECTORY_SEPARATOR. 'img'. DIRECTORY_SEPARATOR;
-        File::copy($from. 'laptop1.jpg', $to. 'laptop1.jpg');
-        File::copy($from. 'laptop2.jpeg', $to. 'laptop2.jpeg');
+        File::copy($from. 'jaket1.jpg', $to. 'jaket1.jpg');
+        File::copy($from. 'jaket2.jpeg', $to. 'jaket2.jpeg');
     }
 }

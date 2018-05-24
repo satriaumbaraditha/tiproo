@@ -54,9 +54,6 @@ class ProcessTest extends \PHPUnit_Framework_TestCase
 
     public function testThatProcessDoesNotThrowWarningDuringRun()
     {
-        if ('\\' === DIRECTORY_SEPARATOR) {
-            $this->markTestSkipped('This test is transient on Windows');
-        }
         @trigger_error('Test Error', E_USER_NOTICE);
         $process = $this->getProcess(self::$phpBin." -r 'sleep(3)'");
         $process->run();
@@ -210,24 +207,6 @@ class ProcessTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($expectedLength, strlen($p->getOutput()));
         $this->assertEquals($expectedLength, strlen($p->getErrorOutput()));
-    }
-
-    public function testLiveStreamAsInput()
-    {
-        $stream = fopen('php://memory', 'r+');
-        fwrite($stream, 'hello');
-        rewind($stream);
-
-        $p = $this->getProcess(sprintf('%s -r %s', self::$phpBin, escapeshellarg('stream_copy_to_stream(STDIN, STDOUT);')));
-        $p->setInput($stream);
-        $p->start(function ($type, $data) use ($stream) {
-            if ('hello' === $data) {
-                fclose($stream);
-            }
-        });
-        $p->wait();
-
-        $this->assertSame('hello', $p->getOutput());
     }
 
     /**
@@ -1165,9 +1144,8 @@ class ProcessTest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider provideVariousIncrementals
      */
-    public function testIncrementalOutputDoesNotRequireAnotherCall($stream, $method)
-    {
-        $process = $this->getProcess(self::$phpBin.' -r '.escapeshellarg('$n = 0; while ($n < 3) { file_put_contents(\''.$stream.'\', $n, 1); $n++; usleep(1000); }'), null, null, null, null);
+    public function testIncrementalOutputDoesNotRequireAnotherCall($stream, $method) {
+        $process = new Process(self::$phpBin.' -r '.escapeshellarg('$n = 0; while ($n < 3) { file_put_contents(\''.$stream.'\', $n, 1); $n++; usleep(1000); }'), null, null, null, null);
         $process->start();
         $result = '';
         $limit = microtime(true) + 3;
@@ -1181,8 +1159,7 @@ class ProcessTest extends \PHPUnit_Framework_TestCase
         $process->stop();
     }
 
-    public function provideVariousIncrementals()
-    {
+    public function provideVariousIncrementals() {
         return array(
             array('php://stdout', 'getIncrementalOutput'),
             array('php://stderr', 'getIncrementalErrorOutput'),
@@ -1211,7 +1188,7 @@ class ProcessTest extends \PHPUnit_Framework_TestCase
             } catch (RuntimeException $e) {
                 $this->assertSame('This PHP has been compiled with --enable-sigchild. You must use setEnhanceSigchildCompatibility() to use this method.', $e->getMessage());
                 if ($enhance) {
-                    $process->setEnhanceSigchildCompatibility(true);
+                    $process->setEnhanceSigChildCompatibility(true);
                 } else {
                     self::$notEnhancedSigchild = true;
                 }

@@ -38,7 +38,7 @@ class Fee extends Model
     {
         return $this->updated_at->diffInDays(Carbon::today()) > 7;
     }
-
+    
     public function populateCost()
     {
         $params = $this->toArray();

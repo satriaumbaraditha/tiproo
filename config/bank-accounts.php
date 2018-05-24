@@ -3,27 +3,27 @@ return [
     'bca'=>[
         'title'=>'BCA',
         'bank'=>'BCA',
-        'name'=>'TIPro',
-        'number'=>'13456768'
+        'name'=>'PT Hanifa sejahtera',
+        'number'=>'45454545'
     ],
     'bni'=>[
         'title'=>'BNI',
         'bank'=>'BNI',
-        'name'=>'TIPro',
-        'number'=>'145657'
+        'name'=>'PT Hanifa sejahtera',
+        'number'=>'787687678'
     ],
     'mandiri'=>[
         'title'=>'MANDIRI',
         'bank'=>'MANDIRI',
-        'name'=>'TIPro',
-        'number'=>'1234567'
+        'name'=>'PT Hanifa sejahtera',
+        'number'=>'23223232'
     ],
 
     'atm-bersama'=>[
         'title'=>'ATM-BERSAMA',
         'bank'=>'ATM-BERSAMA',
-        'name'=>'TIPro',
-        'number'=>'13234567'
+        'name'=>'PT Hanifa sejahtera',
+        'number'=>'23223232'
     ],
 
 ];

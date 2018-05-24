@@ -69,7 +69,7 @@
           echo '[';
           for ($i=0; $i < count(json_decode($chartData)); $i++) {
             $data = json_decode($chartData)[$i];
-            echo "{ x: ". $data->id. ", value:".$data->quantity."},";
+            echo "{ x: ". "'$data->name'". ", value:".$data->quantity."},";
           }
           echo ']';
           ?>

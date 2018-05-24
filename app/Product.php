@@ -10,7 +10,7 @@ class Product extends Model
 {
     protected $appends = ['photo_path'];
 
-    protected $fillable = ['name', 'photo', 'model', 'price', 'description', 'weight'];
+    protected $fillable = ['name', 'photo', 'model', 'prince', 'weight'];
 
     public function categories()
     {
@@ -33,7 +33,7 @@ class Product extends Model
             //removing relations to category
             $model->categories()->detach();
             // removing relations to cart
-            // $model->cart()->detach();
+            $model->cart()->detach();
         });
     }
 

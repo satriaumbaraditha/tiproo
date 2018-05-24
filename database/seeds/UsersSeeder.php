@@ -13,7 +13,7 @@ class UsersSeeder extends Seeder
     {
         App\User::create([
             'name'=>'Admin',
-            'email'=>'kwayan26@yahoo.com',
+            'email'=>'admin@hanifa.dev',
             'password'=>bcrypt('love'),
             'role'=>'admin'
         ]);

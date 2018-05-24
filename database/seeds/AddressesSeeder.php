@@ -22,8 +22,8 @@ class AddressesSeeder extends Seeder
         $customer = User::where('email', 'customer@gmail.com')->first();
         $address1 = Address::create([
             'user_id'=>$customer->id,
-            'name'=>'Krisna Putra ',
-            'detail'=>'Jalan Nangka',
+            'name'=>'yadi',
+            'detail'=>'Kp Kadu Beureuk Rt.03 Rw 01',
             //kota cimahi
             'regency_id'=>107,
             'phone'=>'087871243890',
@@ -31,8 +31,8 @@ class AddressesSeeder extends Seeder
 
         $address1 = Address::create([
             'user_id'=>$customer->id,
-            'name'=>'Eka Krisna',
-            'detail'=>'Jalan Antasura',
+            'name'=>'nurul',
+            'detail'=>'Kp Batukuwung Rt.03 Rw 01',
             //kota bekasi
             'regency_id'=>55,
             'phone'=>'087871243890',

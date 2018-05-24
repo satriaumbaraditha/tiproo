@@ -17,8 +17,6 @@ use App\Support\CartService;
 use App\Order;
 use App\OrderDetail;
 
-use RajaOngkir;
-
 class CheckoutController extends Controller
 {
     protected $cart;

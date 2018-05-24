@@ -20,7 +20,7 @@
 */
 
 Route::group(['middleware' => 'web'], function () {
-  Route::get('/', 'CatalogsController@index');
+    Route::get('/', 'CatalogsController@index');
 
     Route::get('/catalogs', 'CatalogsController@index');
 
@@ -36,8 +36,6 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/home', 'HomeController@index');
 
-    Route::get('/dashboard', 'HomeController@index1');
-    Route::get('produk/{id}', 'ProductsController@produk');
     Route::resource('categories', 'CategoriesController');
 
     Route::resource('products','ProductsController');
@@ -45,7 +43,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('checkout/login','CheckoutController@login');
 
     Route::post('checkout/login','CheckoutController@postlogin');
-
+    Route::get('/dashboard', 'HomeController@index1');
+    Route::get('produk/{id}', 'ProductsController@produk');
     Route::get('checkout/address', 'CheckoutController@address');
     Route::post('checkout/address', 'CheckoutController@postAddress');
     Route::get('address/regencies', 'AddressController@regencies');
@@ -60,8 +59,8 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/home/orders', 'HomeController@viewOrders');
 
-    // Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
-    // Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
+    Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
+    Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
     Route::get('/profile', 'UsersController@index');
 
     Route::group(['middleware'=>'auth'], function(){
