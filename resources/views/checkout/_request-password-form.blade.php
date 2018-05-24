@@ -3,7 +3,7 @@
     {!! Form::label('email', 'Alamat email', ['class'=>'col-md-4 control-tabel']) !!}
     <div class="col-md-6">
     {!! Form::email('email', session()->has('email') ? session('email') : null, ['class'=>'form-control']) !!}
-    <p class="help-block">Nampaknya Anda pernah berelanja di Hanifa Store. Klik "Kirim Petunjuk" untuk menerima password baru.</p>
+    <p class="help-block">Nampaknya Anda pernah berelanja di TIPro. Klik "Kirim Petunjuk" untuk menerima password baru.</p>
     {!! $errors->first('email','<p class="help-block">:message</p>') !!}
     </div>
     </div>
