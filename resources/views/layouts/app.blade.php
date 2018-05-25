@@ -54,7 +54,7 @@
                             <li><a href="{{ route('categories.index')}}"><i class="fa fa-btn fa-tags"></i>Categories</a></li>
                             <li><a href="{{ route('products.index')}}"><i class="fa fa-gift"> Products</i></a></li>
                             <li><a href="{{ route('orders.index') }}"><i class="fa fa-btn fa-shopping-cart"></i>Orders</a></li>
-                            <li><a href="{{ url('/dashboard') }}"><i class="fa fa-user fa-fw"></i>Dashboard</a></li>
+                            <li><a href="{{ url('/dashboard') }}"><i class="fa fa-user fa-fw"></i>Statistic</a></li>
                         </ul>
                     </li>
                         @endcan

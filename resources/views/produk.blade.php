@@ -3,18 +3,19 @@
 @section('content')
 <div class="container">
   @foreach($products as $product)
-  <p style="text-align: center;">
+  <div class="col-md-5" style="border-radius: 20px;" >
     <img style="background-color:powderblue; border-radius: 20px;" src="{{$product->photo_path}}">
-  </p>
-  <div class="col-md-12" style="background-color:powderblue; border-radius: 20px;" >
-    <p style = "font-size:24px";>Name : {{$product->name}}</p>
-    <p style = "font-size:24px";>Model : {{$product->model}}</p>
-    <p style = "font-size:24px";>Price : {{$product->price}}</p>
-    <p style = "font-size:24px";>Description : {{$product->description}}</p>
+  </div>
+  <div class="col-md-5" style="border-radius: 20px;" >
+    <p style = "font-size:16px";>Name : {{$product->name}}</p>
+    <p style = "font-size:16px";>Model : {{$product->model}}</p>
+    <p style = "font-size:16px";>Price : {{$product->price}}</p>
+    <p style = "font-size:16px";>Description : {{$product->description}}</p>
   </div>
 
   @endforeach
-  <div class="col-md-12" style="text-align: center;">
+
+  <div class="col-md-6" style="text-align: left;">
   <p>
       {!! Form::open(['url'=>'cart', 'method'=>'post', 'class'=>'form-inline']) !!}
           {!! Form::hidden('product_id', $product->id) !!}
